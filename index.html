@@ -8,7 +8,7 @@
 </head>
 <body>\n<a class="skip-link" href="#innhold">Hopp til innholdet</a>
 <header class="hero"><div class="wrap">
-<p class="eyebrow">OUSDAL IT · TESKJE-GUIDE · M0.3</p>
+<p class="eyebrow">OUSDAL IT · TESKJE-GUIDE · M0.5</p>
 <h1>Installer Python og Thonny – steg for steg</h1>
 <p class="lead">Ingen forkunnskaper nødvendig. Gjør én ting om gangen. Ikke hopp over punkter.</p>
 <div class="important"><strong>Windows eller Mac?</strong> Installer Thonny først. Python følger med Thonny, så du trenger normalt ikke installere Python separat.</div>
@@ -63,13 +63,34 @@
 <ol start="4"><li>Trykk <kbd>F5</kbd>, eller klikk den grønne <strong>Run</strong>-knappen.</li><li>Hvis du blir bedt om å lagre filen, velg <strong>Dokumenter</strong> og skriv filnavnet <code>hei.py</code>.</li><li>Klikk <strong>Lagre</strong>.</li><li>Se i <strong>Shell</strong>-området nederst i Thonny.</li></ol>
 <div class="success"><strong>Du skal se:</strong><pre><code>Hei!</code></pre><strong>Ser du «Hei!»? Da er du ferdig.</strong> Thonny og Python virker, og du har kjørt ditt første Python-program.</div></section>
 
-<section class="card"><h2>Stopp her hvis noe ikke stemmer</h2>
-<p>Ikke prøv tilfeldige løsninger. Finn punktet som ligner på problemet ditt:</p><ul>
-<li><strong>Jeg finner ikke filen jeg lastet ned:</strong> Åpne nettleserens Nedlastinger. På Windows/Linux virker <kbd>Ctrl</kbd> + <kbd>J</kbd> i mange nettlesere.</li>
-<li><strong>Thonny finnes ikke etter installasjonen:</strong> Start datamaskinen på nytt og søk etter Thonny igjen.</li>
-<li><strong>Jeg får ikke «Hei!»:</strong> Kontroller parentesene, anførselstegnene og utropstegnet mot eksemplet over. Trykk så F5 igjen.</li>
-<li><strong>Linux sier at wget ikke finnes:</strong> Installer <code>wget</code> med distribusjonens pakkebehandler, eller bruk en Thonny-pakke som distribusjonen tilbyr.</li></ul></section>
+<section id="hjelp" class="card page-break"><h2>Jeg sitter fast</h2>
+<p><strong>Velg setningen som passer best.</strong> Du trenger ikke forstå feilmeldingen først.</p>
+
+<h3>«Jeg finner ikke filen jeg lastet ned»</h3>
+<ol><li>Ikke last ned på nytt ennå.</li><li>Åpne nettleserens <strong>Nedlastinger / Downloads</strong>.</li><li>På Windows og Linux kan <kbd>Ctrl</kbd> + <kbd>J</kbd> åpne nedlastingslisten i mange nettlesere.</li><li>Se etter en fil med <strong>thonny</strong> i navnet.</li></ol>
+<div class="check">✓ <strong>Fant du filen?</strong> Åpne den og fortsett installasjonen der du slapp.</div>
+
+<h3>Windows: «Ingenting skjer når jeg åpner filen»</h3>
+<ol><li>Vent 20 sekunder. Installasjonsvinduet kan bruke litt tid på å vises.</li><li>Se på oppgavelinjen etter et nytt eller blinkende vindu.</li><li>Hvis ingenting vises, åpne Nedlastinger og prøv filen én gang til.</li><li>Hvis Windows viser en sikkerhetsmelding, les den før du velger noe. Fortsett bare når du har kontrollert at filen kom fra <strong>thonny.org</strong>.</li></ol>
+
+<h3>Mac: «macOS vil ikke åpne installasjonen»</h3>
+<ol><li>Kontroller først at filen ble lastet ned fra <strong>thonny.org</strong>.</li><li>Ikke slå av sikkerhetsfunksjoner for å få installasjonen til å virke.</li><li>Les meldingen macOS viser. Hvis den sier at filen er skadet, ukjent eller blokkert, stopp og kontroller at du valgte riktig Mac-versjon.</li></ol>
+<div class="stop"><strong>Stoppunkt:</strong> Er du usikker på en sikkerhetsadvarsel, ikke klikk deg forbi den bare for å komme videre.</div>
+
+<h3>Linux: «Kommandoen virker ikke»</h3>
+<ol><li>Kontroller at du kopierte hele kommandoen.</li><li>Kontroller Internett-forbindelsen.</li><li>Hvis terminalen sier <code>wget: command not found</code>, mangler programmet <code>wget</code>.</li><li>Bruk distribusjonens vanlige pakkebehandler til å installere wget, eller installer Thonny fra distribusjonens programbutikk/pakkesystem.</li></ol>
+
+<h3>«Thonny er installert, men jeg finner det ikke»</h3>
+<ol><li>Lukk installasjonsprogrammet.</li><li>Start datamaskinen på nytt.</li><li>Windows: åpne Start og skriv <strong>Thonny</strong>.</li><li>Mac: åpne <strong>Programmer / Applications</strong> og se etter Thonny.</li><li>Linux: åpne programmenyen og søk etter Thonny.</li></ol>
+
+<h3>«Jeg trykker F5, men får ikke Hei!»</h3>
+<ol><li>Kontroller at linjen er nøyaktig <code>print("Hei!")</code>.</li><li>Kontroller at begge anførselstegn og begge parenteser er med.</li><li>Kontroller at du skrev i redigeringsfeltet, ikke direkte i Shell.</li><li>Trykk <kbd>F5</kbd> igjen.</li><li>Se nederst i <strong>Shell</strong>.</li></ol>
+<div class="look"><strong>Hvis du ser rød tekst:</strong> Ikke få panikk. Rød tekst er en feilmelding. Sammenlign først programlinjen tegn for tegn med eksemplet over.</div>
+
+<h3>Fortsatt fast?</h3>
+<p>Skriv ned eller ta bilde av <strong>hele meldingen på skjermen</strong>, hvilket operativsystem du bruker, og hvilket punkt i guiden du var på. Det gjør det mye enklere å få hjelp.</p>
+</section>
 
 <section class="card compact"><h2>Om guiden</h2><p>Laget og vedlikeholdt av <strong>Ousdal IT</strong>. HTML er hovedformatet; PDF bygges fra samme side slik at innholdet er likt.</p><p>Installasjonsvalg og offisiell Linux-kommando følger <a href="https://thonny.org/">thonny.org</a>.</p></section>
-</main><footer><div class="wrap">Ousdal IT · Thonny Install · M0.3</div></footer>
+</main><footer><div class="wrap">Ousdal IT · Thonny Install · M0.5</div></footer>
 </body></html>
