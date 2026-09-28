@@ -24,7 +24,7 @@ jobs:
       - name: Prepare site
         run: |
           mkdir -p site
-          cp index.html style.css site/
+          cp index.html style.css site/\n          touch site/.nojekyll
 
       - name: Build PDF from the same HTML
         run: |
@@ -45,8 +45,25 @@ jobs:
           s = p.read_text()
           needle = '<button class="button secondary" onclick="window.print()">Skriv ut / lagre som PDF</button>'
           replacement = needle + '\n        <a class="button secondary" href="Thonny-Install.pdf">Last ned PDF</a>'
+          if needle not in s:
+              raise SystemExit("PDF link insertion point not found")
           p.write_text(s.replace(needle, replacement))
           PY
+
+      - name: Verify generated site
+        run: |
+          test -s site/index.html
+          test -s site/style.css
+          test -s site/Thonny-Install.pdf
+          grep -q 'Last ned PDF' site/index.html
+          grep -q 'Ousdal IT' site/index.html
+
+      - name: Upload downloadable PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Thonny-Install-PDF
+          path: site/Thonny-Install.pdf
+          if-no-files-found: error
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
