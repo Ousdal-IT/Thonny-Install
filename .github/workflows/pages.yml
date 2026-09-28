@@ -23,14 +23,14 @@ jobs:
 
       - name: Prepare site
         run: |
-          mkdir -p site/assets/screenshots
-          cp index.html style.css site/
+          mkdir -p site/assets/screenshots site/en
+          cp index.html style.css site/\n          cp en/index.html site/en/
           cp assets/screenshots/manifest.json site/assets/screenshots/
           touch site/.nojekyll
 
       - name: Validate source HTML and accessibility invariants
         run: |
-          python3 scripts/check-guide.py index.html
+          python3 scripts/check-guide.py index.html\n          python3 scripts/check-guide.py en/index.html
 
       - name: Build PDF from the same HTML
         run: |
@@ -41,7 +41,7 @@ jobs:
             --allow-file-access-from-files \
             --print-to-pdf="$PWD/site/Thonny-Install.pdf" \
             "file://$PWD/index.html"
-          test -s site/Thonny-Install.pdf\n          python3 scripts/check-pdf.py site/Thonny-Install.pdf\n\n      - name: Add direct PDF link
+          test -s site/Thonny-Install.pdf\n          python3 scripts/check-guide.py site/en/index.html\n          python3 scripts/check-pdf.py site/Thonny-Install.pdf\n\n      - name: Add direct PDF link
         run: |
           python3 - <<'PY'
           from pathlib import Path
