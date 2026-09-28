@@ -3,7 +3,7 @@ import json, re, sys
 from pathlib import Path
 
 manifest=json.loads(Path("assets/screenshots/manifest.json").read_text(encoding="utf-8"))
-items={x.get("id"):x for x in manifest.get("screenshots",[])}
+items={x.get("step"):x for x in manifest.get("screenshots",[])}
 errors=[]
 
 for source in ("index.html","en/index.html"):
