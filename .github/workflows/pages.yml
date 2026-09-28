@@ -24,51 +24,78 @@ jobs:
       - name: Prepare site
         run: |
           mkdir -p site/assets/screenshots site/en
-          cp index.html style.css site/\n          cp en/index.html site/en/
+          cp index.html style.css site/
+          cp en/index.html site/en/
           cp assets/screenshots/manifest.json site/assets/screenshots/
           touch site/.nojekyll
 
-      - name: Validate source HTML and accessibility invariants
+      - name: Validate source guides
         run: |
-          python3 scripts/check-guide.py index.html\n          python3 scripts/check-guide.py en/index.html
+          python3 scripts/check-guide.py index.html
+          python3 scripts/check-guide.py en/index.html
 
-      - name: Build PDF from the same HTML
+      - name: Build Norwegian PDF
         run: |
           google-chrome \
-            --headless \
-            --no-sandbox \
-            --disable-gpu \
+            --headless --no-sandbox --disable-gpu \
             --allow-file-access-from-files \
-            --print-to-pdf="$PWD/site/Thonny-Install.pdf" \
+            --print-to-pdf="$PWD/site/Thonny-Install-NO.pdf" \
             "file://$PWD/index.html"
-          test -s site/Thonny-Install.pdf\n          python3 scripts/check-guide.py site/en/index.html\n          python3 scripts/check-pdf.py site/Thonny-Install.pdf\n\n      - name: Add direct PDF link
+          python3 scripts/check-pdf.py site/Thonny-Install-NO.pdf
+
+      - name: Build English PDF
+        run: |
+          google-chrome \
+            --headless --no-sandbox --disable-gpu \
+            --allow-file-access-from-files \
+            --print-to-pdf="$PWD/site/en/Thonny-Install-EN.pdf" \
+            "file://$PWD/en/index.html"
+          python3 scripts/check-pdf.py site/en/Thonny-Install-EN.pdf
+
+      - name: Add language-specific PDF links
         run: |
           python3 - <<'PY'
           from pathlib import Path
-          p = Path("site/index.html")
-          s = p.read_text()
-          needle = '<button class="button secondary" onclick="window.print()">Skriv ut / PDF</button>'
-          replacement = needle + '\n        <a class="button secondary" href="Thonny-Install.pdf">Last ned PDF</a>'
-          if needle not in s:
-              raise SystemExit("PDF link insertion point not found")
-          p.write_text(s.replace(needle, replacement))
+          pairs = [
+              (Path("site/index.html"),
+               '<button class="button secondary" onclick="window.print()">Skriv ut / PDF</button>',
+               '<a class="button secondary" href="Thonny-Install-NO.pdf">Last ned PDF</a>'),
+              (Path("site/en/index.html"),
+               '<button class="button secondary" onclick="window.print()">Print / PDF</button>',
+               '<a class="button secondary" href="Thonny-Install-EN.pdf">Download PDF</a>'),
+          ]
+          for path, needle, link in pairs:
+              s = path.read_text(encoding="utf-8")
+              if needle not in s:
+                  raise SystemExit(f"PDF link insertion point not found in {path}")
+              path.write_text(s.replace(needle, needle + "\n" + link), encoding="utf-8")
           PY
 
       - name: Verify generated site
         run: |
           test -s site/index.html
+          test -s site/en/index.html
           test -s site/style.css
-          test -s site/Thonny-Install.pdf
+          test -s site/Thonny-Install-NO.pdf
+          test -s site/en/Thonny-Install-EN.pdf
           grep -q 'Last ned PDF' site/index.html
-          grep -q 'Ousdal IT' site/index.html
+          grep -q 'Download PDF' site/en/index.html
           python3 -m json.tool site/assets/screenshots/manifest.json >/dev/null
           python3 scripts/check-guide.py site/index.html
+          python3 scripts/check-guide.py site/en/index.html
 
-      - name: Upload downloadable PDF artifact
+      - name: Upload Norwegian PDF artifact
         uses: actions/upload-artifact@v4
         with:
-          name: Thonny-Install-PDF
-          path: site/Thonny-Install.pdf
+          name: Thonny-Install-NO
+          path: site/Thonny-Install-NO.pdf
+          if-no-files-found: error
+
+      - name: Upload English PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Thonny-Install-EN
+          path: site/en/Thonny-Install-EN.pdf
           if-no-files-found: error
 
       - name: Configure Pages
