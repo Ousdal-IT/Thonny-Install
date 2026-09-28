@@ -84,3 +84,20 @@ main:focus { outline: none; }
   h3 + ol, h3 + p { break-before: avoid-page; page-break-before: avoid; }
   .card { orphans: 3; widows: 3; }
 }
+
+
+/* M0.12: allow long cards to paginate while keeping local units together */
+@media print {
+  .card {
+    break-inside: auto;
+    page-break-inside: auto;
+    orphans: 3;
+    widows: 3;
+  }
+  h2 + p, h2 + ol, h2 + ul,
+  h3 + p, h3 + ol, h3 + ul {
+    break-before: avoid-page;
+    page-break-before: avoid;
+  }
+  pre code { white-space: pre-wrap; }
+}
