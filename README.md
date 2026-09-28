@@ -2,23 +2,60 @@
 
 En enkel, utskriftsvennlig **teskje-guide** fra **Ousdal IT** for å installere Thonny og komme i gang med Python.
 
-## M0.19
+## M0.20 — Release Candidate
 
-- norsk HTML-guide
+M0.20 er release candidate for den første publiserbare flyer-versjonen.
+
+### Innhold
+
+- Norsk hovedguide
+- Engelsk guide under `/en/`
 - Windows 10/11, macOS og Linux
-- klikk-for-klikk-instruksjoner
-- kontrollpunkt etter kritiske steg\n- «Dette skal du se nå»-bokser\n- tydelig tastaturfokus og hopp-lenke\n- minst 48 px klikkflater på hovedknapper\n- støtte for redusert bevegelse\n- verifiserbar skjermbilde-pipeline med manifest\n- personvern- og foreldelsesregler for skjermbilder\n- «Jeg sitter fast»-flyt basert på hva brukeren ser\n- separat Windows/macOS/Linux-feilsøking\n- trygge stoppunkter ved sikkerhetsadvarsler\n- egen feilsøking av første Python-program\n- CI-port for HTML-struktur og interne lenker\n- automatiske kontroller av språk, hovedoverskrift, skip-link og obligatoriske seksjoner\n- validering både før og etter generering av Pages-versjonen\n- PDF-sjekk for filtype, minimumsstørrelse, EOF og rimelig sidetall\n- print-regler som holder overskrifter, kode, kontrollbokser og listepunkter samlet\n- engelsk guide under `/en/` med delt CSS og samme kvalitetsport\n- språkbytte mellom norsk hovedversjon og engelsk versjon\n- separat norsk PDF: `Thonny-Install-NO.pdf`\n- separat engelsk PDF: `Thonny-Install-EN.pdf`\n- begge PDF-er valideres før Pages kan deployes\n- separate CI-artifacts for NO og EN\n- automatisk NO/EN-paritetskontroll av seksjoner, overskriftsnivåer, kodeblokker og hovedknapper\n- CI stopper språkdrift før publisering\n- lange kort kan deles naturlig over A4-sider i stedet for å bli presset samlet\n- screenshot-ankere er synkronisert mot manifestet i CI\n- CI avviser manglende kandidater og forankrede stale-bilder\n- overskrift + første avsnitt/liste og kontroll-/kodebokser holdes samlet ved sideskift
-- første Python-program
-- feilsøking for nybegynnere
+- Trinn-for-trinn-instruksjoner uten krav om tidligere programmeringserfaring
+- Egen «Jeg sitter fast» / «I'm stuck»-seksjon
+- Første Python-program med `print()`
 - A4/print-CSS
-- automatisk PDF fra samme HTML
-- GitHub Pages-workflow
+- NO- og EN-PDF bygget fra samme HTML-kilde
+- GitHub Pages-deploy
+- Automatisk HTML-, PDF- og språkparitetskontroll
+- Screenshot-manifest med `candidate`, `verified` og `stale`
+- Automatisk kobling mellom verifiserte screenshots og riktig steg
+- Personvernkrav for screenshots
 
-HTML er hovedkilden. PDF-en bygges fra den samme siden for å unngå at formatene får forskjellig innhold.
+### Screenshot-status
 
-## Neste
+De ti planlagte screenshots er registrert som `candidate`. **Ingen screenshots er ennå merket `verified`**, og derfor publiseres ingen bilder i guiden.
 
-Planlagt videre arbeid: fylle screenshot-manifestet med faktiske verifiserte bilder og gjennomføre ny visuell PDF-inspeksjon etter første screenshot-sett.
+Dette er med hensikt: guiden skal aldri inneholde konstruerte eller utdaterte OS-/Thonny-bilder.
+
+### Kvalifisering
+
+GitHub Actions må passere hele kjeden:
+
+1. Kildevalidering av norsk og engelsk HTML
+2. NO/EN-strukturparitet
+3. Screenshot-manifest og anchor-kontroll
+4. Generering av GitHub Pages
+5. Norsk PDF
+6. Engelsk PDF
+7. PDF-validering
+8. Pages-deploy
+
+### Formater
+
+- Web: GitHub Pages
+- PDF: `Thonny-Install-NO.pdf`
+- PDF: `Thonny-Install-EN.pdf`
+
+HTML er hovedkilden. PDF bygges fra samme side slik at web og PDF ikke får forskjellig innhold.
+
+## Neste etter M0.20
+
+Første innholdsutvidelse etter RC er å ta de ti screenshots fra rene testmiljøer, registrere eksakt OS-/Thonny-versjon og gjøre personvernkontroll før noen settes til `verified`.
+
+## Eier
+
+**Ousdal IT**
 
 ## Lisens
 
