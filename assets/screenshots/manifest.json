@@ -101,7 +101,7 @@
     {
       "id": "linux-launch",
       "file": "linux/launch.png",
-      "step": "linux-start",
+      "step": "linux-launch",
       "os": "Linux",
       "os_version": "",
       "thonny_version": "",
