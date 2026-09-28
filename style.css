@@ -1,0 +1,53 @@
+:root {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #1b1f23;
+  background: #f4f6f8;
+  line-height: 1.65;
+  font-size: 18px;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+a { color: #075985; }
+.wrap { width: min(900px, calc(100% - 2rem)); margin: 0 auto; }
+.hero { background: #ffffff; border-bottom: 1px solid #d8dee4; padding: 3rem 0 2rem; }
+.eyebrow { font-weight: 800; letter-spacing: .08em; font-size: .82rem; }
+h1 { font-size: clamp(2rem, 6vw, 3.5rem); line-height: 1.05; margin: .3rem 0 1rem; }
+h2 { font-size: 1.8rem; line-height: 1.2; margin-top: 0; }
+h3 { font-size: 1.25rem; margin-top: 2rem; }
+.lead { font-size: 1.25rem; }
+.important, .note, .success { border-left: .4rem solid #444; padding: 1rem 1.2rem; background: #f7f7f7; border-radius: .4rem; }
+.success { font-size: 1.15rem; }
+.actions { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 1.5rem; }
+.button { display: inline-block; border: 0; border-radius: .55rem; padding: .8rem 1rem; background: #1f2937; color: white; text-decoration: none; font: inherit; font-weight: 700; cursor: pointer; }
+.button.secondary { background: #e5e7eb; color: #111827; }
+main { padding: 1rem 0 3rem; }
+.card { background: white; margin: 1.25rem 0; padding: 2rem; border: 1px solid #d8dee4; border-radius: .8rem; }
+.card.compact { padding-bottom: 1.2rem; }
+li { margin: .65rem 0; padding-left: .25rem; }
+pre { overflow-x: auto; background: #111827; color: #fff; padding: 1rem; border-radius: .55rem; font-size: 1rem; }
+code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+kbd { border: 1px solid #aaa; border-bottom-width: 2px; border-radius: .25rem; padding: .05rem .3rem; background: #fff; }
+footer { padding: 2rem 0 3rem; font-size: .9rem; color: #555; }
+
+@media (max-width: 600px) {
+  :root { font-size: 17px; }
+  .card { padding: 1.2rem; }
+}
+
+@page { size: A4; margin: 14mm; }
+@media print {
+  :root { background: #fff; font-size: 12pt; }
+  body { background: #fff; }
+  .no-print { display: none !important; }
+  .hero { padding: 0 0 8mm; border: 0; }
+  .wrap { width: 100%; }
+  .card { border: 0; border-radius: 0; padding: 0; margin: 0 0 8mm; break-inside: avoid-page; }
+  .page-break { break-before: page; }
+  h1 { font-size: 27pt; }
+  h2 { font-size: 20pt; }
+  h3 { font-size: 14pt; }
+  a { color: inherit; text-decoration: none; }
+  pre { white-space: pre-wrap; border: 1px solid #444; background: #f2f2f2; color: #000; }
+  footer { padding: 4mm 0 0; }
+}
