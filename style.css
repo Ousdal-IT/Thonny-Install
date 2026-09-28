@@ -54,3 +54,18 @@ footer { padding: 2rem 0 3rem; font-size: .9rem; color: #555; }
 
 .check { margin: 1.2rem 0; padding: 1rem 1.2rem; border: 2px solid #374151; border-radius: .55rem; background: #f9fafb; font-size: 1.05rem; }
 @media print { .check { break-inside: avoid; } }
+
+/* M0.3: accessibility and senior-friendly interaction */
+html { scroll-behavior: smooth; }
+body { font-size: 1rem; }
+p, li { max-width: 72ch; }
+a { text-decoration-thickness: .12em; text-underline-offset: .16em; }
+a:focus-visible, button:focus-visible { outline: 4px solid #111827; outline-offset: 4px; }
+.skip-link { position: absolute; left: .75rem; top: -5rem; z-index: 100; padding: .8rem 1rem; background: #fff; color: #111; border: 3px solid #111; font-weight: 800; }
+.skip-link:focus { top: .75rem; }
+.button { min-height: 48px; min-width: 48px; display: inline-flex; align-items: center; justify-content: center; }
+.look { margin: 1.2rem 0; padding: 1rem 1.2rem; border: 2px dashed #374151; border-radius: .55rem; background: #fff; font-size: 1.08rem; }
+main:focus { outline: none; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+@media (max-width: 600px) { .actions .button { width: 100%; } }
+@media print { .skip-link { display: none; } .look { break-inside: avoid; } p, li { max-width: none; } }
