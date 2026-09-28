@@ -27,6 +27,7 @@ jobs:
           cp index.html style.css site/
           cp en/index.html site/en/
           cp assets/screenshots/manifest.json site/assets/screenshots/
+          python3 scripts/generate-screenshots.py
           touch site/.nojekyll
 
       - name: Validate source guides
