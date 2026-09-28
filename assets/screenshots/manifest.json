@@ -6,5 +6,136 @@
     "guide_must_work_without_images": true,
     "privacy_review_required": true
   },
-  "screenshots": []
+  "screenshots": [
+    {
+      "id": "win-download",
+      "file": "windows/download.png",
+      "step": "windows-download",
+      "os": "Windows",
+      "os_version": "",
+      "thonny_version": "",
+      "language": "neutral",
+      "captured_at": "",
+      "source": "",
+      "alt": "Official Thonny download page showing the Windows download choice",
+      "status": "candidate"
+    },
+    {
+      "id": "win-installer",
+      "file": "windows/installer.png",
+      "step": "windows-install",
+      "os": "Windows",
+      "os_version": "",
+      "thonny_version": "",
+      "language": "neutral",
+      "captured_at": "",
+      "source": "",
+      "alt": "Thonny installer window on Windows",
+      "status": "candidate"
+    },
+    {
+      "id": "win-launch",
+      "file": "windows/launch.png",
+      "step": "windows-start",
+      "os": "Windows",
+      "os_version": "",
+      "thonny_version": "",
+      "language": "neutral",
+      "captured_at": "",
+      "source": "",
+      "alt": "Thonny open successfully on Windows",
+      "status": "candidate"
+    },
+    {
+      "id": "mac-download",
+      "file": "macos/download.png",
+      "step": "macos-download",
+      "os": "macOS",
+      "os_version": "",
+      "thonny_version": "",
+      "language": "neutral",
+      "captured_at": "",
+      "source": "",
+      "alt": "Official Thonny download page showing the macOS download choice",
+      "status": "candidate"
+    },
+    {
+      "id": "mac-installer",
+      "file": "macos/installer.png",
+      "step": "macos-install",
+      "os": "macOS",
+      "os_version": "",
+      "thonny_version": "",
+      "language": "neutral",
+      "captured_at": "",
+      "source": "",
+      "alt": "Thonny package installer on macOS",
+      "status": "candidate"
+    },
+    {
+      "id": "mac-launch",
+      "file": "macos/launch.png",
+      "step": "macos-start",
+      "os": "macOS",
+      "os_version": "",
+      "thonny_version": "",
+      "language": "neutral",
+      "captured_at": "",
+      "source": "",
+      "alt": "Thonny open successfully on macOS",
+      "status": "candidate"
+    },
+    {
+      "id": "linux-terminal",
+      "file": "linux/terminal.png",
+      "step": "linux-install",
+      "os": "Linux",
+      "os_version": "",
+      "thonny_version": "",
+      "language": "neutral",
+      "captured_at": "",
+      "source": "",
+      "alt": "Official Thonny installer command in a Linux terminal",
+      "status": "candidate"
+    },
+    {
+      "id": "linux-launch",
+      "file": "linux/launch.png",
+      "step": "linux-start",
+      "os": "Linux",
+      "os_version": "",
+      "thonny_version": "",
+      "language": "neutral",
+      "captured_at": "",
+      "source": "",
+      "alt": "Thonny open successfully on Linux",
+      "status": "candidate"
+    },
+    {
+      "id": "thonny-editor",
+      "file": "thonny/editor.png",
+      "step": "first-program",
+      "os": "Cross-platform",
+      "os_version": "",
+      "thonny_version": "",
+      "language": "neutral",
+      "captured_at": "",
+      "source": "",
+      "alt": "Thonny editor showing where to type the first Python program",
+      "status": "candidate"
+    },
+    {
+      "id": "thonny-run",
+      "file": "thonny/run.png",
+      "step": "run-program",
+      "os": "Cross-platform",
+      "os_version": "",
+      "thonny_version": "",
+      "language": "neutral",
+      "captured_at": "",
+      "source": "",
+      "alt": "Thonny Shell showing the expected output after running the first program",
+      "status": "candidate"
+    }
+  ]
 }
