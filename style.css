@@ -113,3 +113,8 @@ main:focus { outline: none; }
 .screenshot img { display:block; width:100%; height:auto; border:1px solid #9ca3af; border-radius:.5rem; background:#fff; }
 .screenshot figcaption { margin-top:.5rem; font-size:.95rem; font-weight:700; }
 @media print { .screenshot-gallery { break-inside:auto; } .screenshot { break-inside:avoid-page; } }
+
+.screenshot-inline { margin: 1rem 0 1.5rem; max-width: 900px; }
+.screenshot-inline img { display:block; width:100%; height:auto; border:1px solid #9ca3af; border-radius:.5rem; background:#fff; }
+.screenshot-inline figcaption { margin-top:.45rem; font-size:.95rem; font-weight:700; }
+@media print { .screenshot-inline { break-inside:avoid-page; } }
