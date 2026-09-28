@@ -101,3 +101,9 @@ main:focus { outline: none; }
   }
   pre code { white-space: pre-wrap; }
 }
+
+/* M0.13: keep the short final about card with preceding content when possible */
+@media print {
+  .card.compact { break-before: auto; page-break-before: auto; }
+  footer { display: none; }
+}
