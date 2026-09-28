@@ -41,9 +41,7 @@ jobs:
             --allow-file-access-from-files \
             --print-to-pdf="$PWD/site/Thonny-Install.pdf" \
             "file://$PWD/index.html"
-          test -s site/Thonny-Install.pdf
-
-      - name: Add direct PDF link
+          test -s site/Thonny-Install.pdf\n          python3 scripts/check-pdf.py site/Thonny-Install.pdf\n\n      - name: Add direct PDF link
         run: |
           python3 - <<'PY'
           from pathlib import Path
