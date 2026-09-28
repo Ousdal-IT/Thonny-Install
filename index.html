@@ -6,15 +6,15 @@
 <meta name="description" content="Teskje-guide fra Ousdal IT: installer Thonny og Python og kjør ditt første program.">
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body>\n<a class="skip-link" href="#innhold">Hopp til innholdet</a>
 <header class="hero"><div class="wrap">
-<p class="eyebrow">OUSDAL IT · TESKJE-GUIDE · M0.1</p>
+<p class="eyebrow">OUSDAL IT · TESKJE-GUIDE · M0.3</p>
 <h1>Installer Python og Thonny – steg for steg</h1>
 <p class="lead">Ingen forkunnskaper nødvendig. Gjør én ting om gangen. Ikke hopp over punkter.</p>
 <div class="important"><strong>Windows eller Mac?</strong> Installer Thonny først. Python følger med Thonny, så du trenger normalt ikke installere Python separat.</div>
 <nav class="actions no-print"><a class="button" href="#windows">Jeg har Windows</a><a class="button" href="#mac">Jeg har Mac</a><a class="button" href="#linux">Jeg har Linux</a><button class="button secondary" onclick="window.print()">Skriv ut / PDF</button></nav>
 </div></header>
-<main class="wrap">
+<main id="innhold" class="wrap" tabindex="-1">
 <section class="card"><h2>Først: åpne Thonny-nettsiden</h2><ol>
 <li>Slå på datamaskinen og vent til skrivebordet vises.</li>
 <li>Kontroller at du er koblet til Internett.</li>
@@ -22,7 +22,7 @@
 <li>Klikk én gang i adressefeltet helt øverst i nettleseren.</li>
 <li>Skriv <strong>thonny.org</strong>.</li><li>Trykk <strong>Enter</strong>.</li>
 <li>Kontroller at adressen i nettleseren er <strong>https://thonny.org/</strong>.</li></ol>
-<div class="check">✓ <strong>Kontroll:</strong> Du skal nå se nettsiden til Thonny.</div></section>
+<div class="look"><strong>Dette skal du se nå:</strong> En nettside med navnet <strong>Thonny</strong> og egne nedlastingsvalg for Windows, macOS og Linux.</div><div class="check">✓ <strong>Kontroll:</strong> Du skal nå se nettsiden til Thonny.</div></section>
 
 <section id="windows" class="card page-break"><h2>Windows 10 eller 11</h2>
 <h3>A. Last ned</h3><ol>
@@ -31,7 +31,7 @@
 <li>Bare hvis du vet at PC-en bruker Windows on ARM/Snapdragon, velger du ARM64.</li>
 <li>Hvis nettleseren spør om du vil laste ned filen, velg <strong>Lagre</strong> eller <strong>Download</strong>.</li>
 <li>Vent til nedlastingen er ferdig. Ikke lukk nettleseren ennå.</li></ol>
-<div class="check">✓ <strong>Kontroll:</strong> Du skal ha en nedlastet Thonny-installasjonsfil.</div>
+<div class="look"><strong>Dette skal du se nå:</strong> Nettleseren viser at en Thonny-installasjonsfil er ferdig lastet ned.</div><div class="check">✓ <strong>Kontroll:</strong> Du skal ha en nedlastet Thonny-installasjonsfil.</div>
 <h3>B. Installer</h3><ol>
 <li>Åpne nettleserens liste over nedlastinger. I Edge, Chrome og Firefox kan du vanligvis trykke <kbd>Ctrl</kbd> + <kbd>J</kbd>.</li>
 <li>Finn Thonny-filen du nettopp lastet ned og klikk på den.</li>
@@ -41,12 +41,12 @@
 <li>Lukk installasjonsprogrammet.</li></ol>
 <h3>C. Start</h3><ol>
 <li>Klikk <strong>Start</strong>-knappen på oppgavelinjen.</li><li>Skriv <strong>Thonny</strong>.</li><li>Klikk <strong>Thonny</strong> i søkeresultatet.</li></ol>
-<div class="check">✓ <strong>Kontroll:</strong> Et vindu med Thonny skal åpne seg. Gå videre til «Test at alt virker».</div></section>
+<div class="look"><strong>Dette skal du se nå:</strong> Thonny har et redigeringsfelt øverst og et <strong>Shell</strong>-område nederst.</div><div class="check">✓ <strong>Kontroll:</strong> Et vindu med Thonny skal åpne seg. Gå videre til «Test at alt virker».</div></section>
 
 <section id="mac" class="card page-break"><h2>macOS</h2>
 <h3>A. Finn hvilken Mac du har</h3><ol><li>Klikk Apple-menyen <strong></strong> øverst til venstre.</li><li>Velg <strong>Om denne maskinen / About This Mac</strong>.</li><li>Ser du Apple M1, M2, M3, M4 eller nyere Apple-brikke, velger du <strong>Apple Silicon</strong> på thonny.org.</li><li>Ser du Intel, velger du <strong>Intel Macs</strong>.</li></ol>
 <h3>B. Last ned og installer</h3><ol><li>På thonny.org, finn <strong>Official downloads for macOS</strong>.</li><li>Klikk versjonen som passer maskinen din.</li><li>Vent til <code>.pkg</code>-filen er lastet ned.</li><li>Åpne <strong>Nedlastinger / Downloads</strong> og dobbeltklikk filen.</li><li>Følg installasjonsvinduene. Godkjenn med passord eller Touch ID hvis macOS ber om det.</li><li>Når installasjonen er ferdig, åpne <strong>Programmer / Applications</strong> og dobbeltklikk <strong>Thonny</strong>.</li></ol>
-<div class="check">✓ <strong>Kontroll:</strong> Thonny-vinduet skal være åpent.</div></section>
+<div class="look"><strong>Dette skal du se nå:</strong> Thonny har et redigeringsfelt øverst og et <strong>Shell</strong>-område nederst.</div><div class="check">✓ <strong>Kontroll:</strong> Thonny-vinduet skal være åpent.</div></section>
 
 <section id="linux" class="card page-break"><h2>Linux</h2>
 <p>På Linux bruker Thonny normalt Python 3 som allerede er installert i systemet.</p>
@@ -71,5 +71,5 @@
 <li><strong>Linux sier at wget ikke finnes:</strong> Installer <code>wget</code> med distribusjonens pakkebehandler, eller bruk en Thonny-pakke som distribusjonen tilbyr.</li></ul></section>
 
 <section class="card compact"><h2>Om guiden</h2><p>Laget og vedlikeholdt av <strong>Ousdal IT</strong>. HTML er hovedformatet; PDF bygges fra samme side slik at innholdet er likt.</p><p>Installasjonsvalg og offisiell Linux-kommando følger <a href="https://thonny.org/">thonny.org</a>.</p></section>
-</main><footer><div class="wrap">Ousdal IT · Thonny Install · M0.1</div></footer>
+</main><footer><div class="wrap">Ousdal IT · Thonny Install · M0.3</div></footer>
 </body></html>
