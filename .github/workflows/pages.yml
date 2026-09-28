@@ -32,9 +32,7 @@ jobs:
       - name: Validate source guides
         run: |
           python3 scripts/check-guide.py index.html
-          python3 scripts/check-guide.py en/index.html
-
-      - name: Build Norwegian PDF
+          python3 scripts/check-guide.py en/index.html\n          python3 scripts/check-language-parity.py index.html en/index.html\n\n      - name: Build Norwegian PDF
         run: |
           google-chrome \
             --headless --no-sandbox --disable-gpu \
