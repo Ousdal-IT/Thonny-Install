@@ -2,12 +2,12 @@
 
 En enkel, utskriftsvennlig **teskje-guide** fra **Ousdal IT** for å installere Thonny og komme i gang med Python.
 
-## M0.1
+## M0.3
 
 - norsk HTML-guide
 - Windows 10/11, macOS og Linux
 - klikk-for-klikk-instruksjoner
-- kontrollpunkt etter kritiske steg
+- kontrollpunkt etter kritiske steg\n- «Dette skal du se nå»-bokser\n- tydelig tastaturfokus og hopp-lenke\n- minst 48 px klikkflater på hovedknapper\n- støtte for redusert bevegelse
 - første Python-program
 - feilsøking for nybegynnere
 - A4/print-CSS
@@ -18,7 +18,7 @@ HTML er hovedkilden. PDF-en bygges fra den samme siden for å unngå at formaten
 
 ## Neste
 
-Planlagt videre arbeid: verifiserte skjermbilder med markeringer, bedre plattformspesifikk feilsøking, tilgjengelighetstest og engelsk versjon.
+Planlagt videre arbeid: verifiserte skjermbilder med markeringer, skjermbildemanifest med kilde/versjon, bedre plattformspesifikk feilsøking og engelsk versjon.
 
 ## Lisens
 
