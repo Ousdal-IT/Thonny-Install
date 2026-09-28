@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "project": "Ousdal-IT/Thonny-Install",
+  "policy": {
+    "verified_only": true,
+    "guide_must_work_without_images": true,
+    "privacy_review_required": true
+  },
+  "screenshots": []
+}
