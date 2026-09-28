@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="no">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Installer Python og Thonny – steg for steg | Ousdal IT</title>
+  <meta name="description" content="En enkel steg-for-steg-guide fra Ousdal IT for å installere Thonny og komme i gang med Python.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <p class="eyebrow">OUS­DAL IT · TESKJE-GUIDE</p>
+      <h1>Installer Python og Thonny – steg for steg</h1>
+      <p class="lead">Ingen forkunnskaper nødvendig. Følg ett punkt om gangen.</p>
+      <p class="important"><strong>Den enkleste løsningen:</strong> På Windows og macOS kommer Thonny med Python inkludert. Du trenger derfor vanligvis ikke installere Python separat.</p>
+      <nav class="actions no-print">
+        <a class="button" href="#windows">Windows</a>
+        <a class="button" href="#mac">macOS</a>
+        <a class="button" href="#linux">Linux</a>
+        <button class="button secondary" onclick="window.print()">Skriv ut / lagre som PDF</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="card">
+      <h2>Før du begynner</h2>
+      <ol>
+        <li>Slå på datamaskinen.</li>
+        <li>Koble datamaskinen til Internett.</li>
+        <li>Åpne nettleseren du vanligvis bruker, for eksempel Edge, Chrome, Firefox eller Safari.</li>
+        <li>Gå til <a href="https://thonny.org/">thonny.org</a>.</li>
+      </ol>
+      <p class="note">Denne guiden tar utgangspunkt i Thonny 5.0.0, som er den stabile versjonen på thonny.org ved M0.</p>
+    </section>
+
+    <section id="windows" class="card page-break">
+      <h2>Windows 10 eller 11</h2>
+      <h3>1. Last ned Thonny</h3>
+      <ol>
+        <li>På thonny.org finner du området <strong>Official downloads for Windows</strong>.</li>
+        <li>Har du en vanlig PC med Intel- eller AMD-prosessor, velg installasjonsfilen for <strong>Intel or AMD computers</strong>.</li>
+        <li>Har du en Windows-PC med ARM-prosessor, for eksempel enkelte Snapdragon-maskiner, velg ARM64-versjonen.</li>
+        <li>Vent til filen er ferdig lastet ned.</li>
+      </ol>
+
+      <h3>2. Start installasjonen</h3>
+      <ol>
+        <li>Åpne listen over nedlastede filer i nettleseren.</li>
+        <li>Klikk på Thonny-filen du nettopp lastet ned.</li>
+        <li>Hvis Windows spør om du vil tillate at programmet gjør endringer, kontroller at filen er Thonny-installasjonen du lastet ned fra thonny.org, og fortsett.</li>
+        <li>Følg veiviseren på skjermen. Standardvalgene passer for de fleste.</li>
+        <li>Når installasjonen er ferdig, lukk installasjonsprogrammet.</li>
+      </ol>
+
+      <h3>3. Start Thonny</h3>
+      <ol>
+        <li>Klikk på <strong>Start</strong>-knappen i Windows.</li>
+        <li>Skriv <strong>Thonny</strong>.</li>
+        <li>Klikk på <strong>Thonny</strong> i søkeresultatet.</li>
+      </ol>
+    </section>
+
+    <section id="mac" class="card page-break">
+      <h2>macOS</h2>
+      <h3>1. Finn riktig Mac-versjon</h3>
+      <ol>
+        <li>På thonny.org finner du området <strong>Official downloads for macOS</strong>.</li>
+        <li>Har du en nyere Mac med Apple Silicon, som M1, M2, M3 eller nyere, velg <strong>Apple Silicon</strong>.</li>
+        <li>Har du en eldre Intel-Mac, velg <strong>Intel Macs</strong>.</li>
+        <li>Vent til <code>.pkg</code>-filen er ferdig lastet ned.</li>
+      </ol>
+
+      <h3>2. Installer</h3>
+      <ol>
+        <li>Åpne den nedlastede <code>.pkg</code>-filen.</li>
+        <li>Følg installasjonsveiviseren.</li>
+        <li>Hvis macOS spør etter passordet ditt eller Touch ID, godkjenn installasjonen.</li>
+        <li>Når installasjonen er ferdig, åpne <strong>Programmer</strong> og start <strong>Thonny</strong>.</li>
+      </ol>
+    </section>
+
+    <section id="linux" class="card page-break">
+      <h2>Linux</h2>
+      <p>Linux-versjonen av Thonny bruker vanligvis Python 3 som allerede finnes i systemet.</p>
+      <h3>Enkel metode</h3>
+      <ol>
+        <li>Åpne et terminalvindu.</li>
+        <li>Skriv inn kommandoen under nøyaktig slik den står.</li>
+      </ol>
+      <pre><code>wget -qO- https://thonny.org/installer-for-linux | bash</code></pre>
+      <ol start="3">
+        <li>Trykk <strong>Enter</strong>.</li>
+        <li>Følg beskjedene i terminalen.</li>
+        <li>Start Thonny fra programmenyen når installasjonen er ferdig.</li>
+      </ol>
+      <p class="note">På enkelte distribusjoner kan Thonny også installeres via Flatpak, Snap, APT eller DNF. Disse pakkene kan være eldre enn den offisielle versjonen.</p>
+    </section>
+
+    <section class="card page-break">
+      <h2>Test at Python virker</h2>
+      <ol>
+        <li>Start Thonny.</li>
+        <li>Klikk i det store hvite redigeringsfeltet øverst.</li>
+        <li>Skriv nøyaktig dette:</li>
+      </ol>
+      <pre><code>print("Hei!")</code></pre>
+      <ol start="4">
+        <li>Klikk på den grønne <strong>Run</strong>-knappen, eller trykk <strong>F5</strong>.</li>
+        <li>Hvis Thonny spør hvor filen skal lagres, velg et sted du finner igjen, for eksempel Dokumenter, og kall filen <code>hei.py</code>.</li>
+        <li>Se nederst i Thonny-vinduet.</li>
+      </ol>
+      <div class="success">
+        <strong>Ser du ordet «Hei!»?</strong><br>
+        Da virker både Thonny og Python. Du har kjørt ditt første Python-program.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Hvis noe ikke virker</h2>
+      <ul>
+        <li><strong>Thonny starter ikke:</strong> Start datamaskinen på nytt og prøv igjen.</li>
+        <li><strong>Du finner ikke nedlastingen:</strong> Trykk <kbd>Ctrl</kbd> + <kbd>J</kbd> i de fleste Windows/Linux-nettlesere, eller åpne Nedlastinger i Safari.</li>
+        <li><strong>Du er usikker på hvilken versjon du skal velge:</strong> Gå tilbake til thonny.org og bruk teksten ved siden av hver nedlasting som veiledning.</li>
+        <li><strong>Linux-kommandoen feiler:</strong> Kontroller at datamaskinen er koblet til Internett og at <code>wget</code> finnes.</li>
+      </ul>
+    </section>
+
+    <section class="card compact">
+      <h2>Om denne guiden</h2>
+      <p>Laget av <strong>Ousdal IT</strong>. M0 er bevisst enkel og skal kunne brukes både som nettside og som utskriftsvennlig PDF.</p>
+      <p>Kilde for plattformvalg og installasjonsmetoder: <a href="https://thonny.org/">thonny.org</a>.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">Ousdal IT · Thonny Install · M0</div>
+  </footer>
+</body>
+</html>
