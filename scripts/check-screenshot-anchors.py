@@ -19,8 +19,8 @@ for source in ("index.html","en/index.html"):
             errors.append(f"{source}: stale screenshot is still anchored: {sid}")
 
 expected={"windows-download","windows-install","windows-start","macos-download",
-          "macos-install","macos-start","linux-terminal","linux-launch",
-          "thonny-editor","thonny-run"}
+          "macos-install","macos-start","linux-install","linux-launch",
+          "first-program","run-program"}
 missing=expected-set(items)
 if missing:
     errors.extend(f"manifest: missing required candidate {x}" for x in sorted(missing))
