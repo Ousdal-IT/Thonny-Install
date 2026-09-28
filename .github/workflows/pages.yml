@@ -38,9 +38,9 @@ jobs:
       - name: Build Norwegian PDF
         run: |
           google-chrome \
-            --headless --no-sandbox --disable-gpu \\
-            --no-pdf-header-footer \\
-            --allow-file-access-from-files \\
+            --headless --no-sandbox --disable-gpu \
+            --no-pdf-header-footer \
+            --allow-file-access-from-files \
             --print-to-pdf="$PWD/site/Thonny-Install-NO.pdf" \
             "file://$PWD/index.html"
           python3 scripts/check-pdf.py site/Thonny-Install-NO.pdf
@@ -49,6 +49,7 @@ jobs:
         run: |
           google-chrome \
             --headless --no-sandbox --disable-gpu \
+            --no-pdf-header-footer \
             --allow-file-access-from-files \
             --print-to-pdf="$PWD/site/en/Thonny-Install-EN.pdf" \
             "file://$PWD/en/index.html"
