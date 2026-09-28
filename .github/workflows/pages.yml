@@ -23,8 +23,14 @@ jobs:
 
       - name: Prepare site
         run: |
-          mkdir -p site
-          cp index.html style.css site/\n          mkdir -p site/assets/screenshots\n          cp assets/screenshots/manifest.json site/assets/screenshots/\n          touch site/.nojekyll
+          mkdir -p site/assets/screenshots
+          cp index.html style.css site/
+          cp assets/screenshots/manifest.json site/assets/screenshots/
+          touch site/.nojekyll
+
+      - name: Validate source HTML and accessibility invariants
+        run: |
+          python3 scripts/check-guide.py index.html
 
       - name: Build PDF from the same HTML
         run: |
@@ -41,9 +47,9 @@ jobs:
         run: |
           python3 - <<'PY'
           from pathlib import Path
-          p = Path('site/index.html')
+          p = Path("site/index.html")
           s = p.read_text()
-          needle = '<button class="button secondary" onclick="window.print()">Skriv ut / lagre som PDF</button>'
+          needle = '<button class="button secondary" onclick="window.print()">Skriv ut / PDF</button>'
           replacement = needle + '\n        <a class="button secondary" href="Thonny-Install.pdf">Last ned PDF</a>'
           if needle not in s:
               raise SystemExit("PDF link insertion point not found")
@@ -56,7 +62,9 @@ jobs:
           test -s site/style.css
           test -s site/Thonny-Install.pdf
           grep -q 'Last ned PDF' site/index.html
-          grep -q 'Ousdal IT' site/index.html\n          python3 -m json.tool site/assets/screenshots/manifest.json >/dev/null
+          grep -q 'Ousdal IT' site/index.html
+          python3 -m json.tool site/assets/screenshots/manifest.json >/dev/null
+          python3 scripts/check-guide.py site/index.html
 
       - name: Upload downloadable PDF artifact
         uses: actions/upload-artifact@v4
