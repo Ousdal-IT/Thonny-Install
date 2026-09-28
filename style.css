@@ -107,3 +107,9 @@ main:focus { outline: none; }
   .card.compact { break-before: auto; page-break-before: auto; }
   footer { display: none; }
 }
+
+.screenshot-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); gap: 1.25rem; }
+.screenshot { margin: 0; }
+.screenshot img { display:block; width:100%; height:auto; border:1px solid #9ca3af; border-radius:.5rem; background:#fff; }
+.screenshot figcaption { margin-top:.5rem; font-size:.95rem; font-weight:700; }
+@media print { .screenshot-gallery { break-inside:auto; } .screenshot { break-inside:avoid-page; } }
