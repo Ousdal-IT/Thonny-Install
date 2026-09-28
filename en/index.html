@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Install Python and Thonny – step by step | Ousdal IT</title>
+<meta name="description" content="A spoon-fed Ousdal IT guide to installing Thonny and Python and running your first program.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="hero"><div class="wrap">
+<p class="eyebrow">OUSDAL IT · STEP-BY-STEP GUIDE · M0.8</p>
+<h1>Install Python and Thonny – step by step</h1>
+<p class="lead">No previous experience needed. Do one thing at a time. Do not skip steps.</p>
+<div class="important"><strong>Windows or Mac?</strong> Install Thonny first. Python is normally included with Thonny, so you usually do not need to install Python separately.</div>
+<nav class="actions no-print" aria-label="Choose operating system"><a class="button" href="#windows">Windows</a><a class="button" href="#mac">Mac</a><a class="button" href="#linux">Linux</a><button class="button secondary" onclick="window.print()">Print / PDF</button><a class="button secondary" href="../">Norsk</a></nav>
+</div></header>
+<main id="content" class="wrap" tabindex="-1">
+<section class="card"><h2>First: open the Thonny website</h2><ol>
+<li>Turn on the computer and wait for the desktop.</li><li>Make sure you are connected to the Internet.</li><li>Open your web browser, for example Edge, Chrome, Firefox or Safari.</li><li>Click once in the address bar at the top.</li><li>Type <strong>thonny.org</strong>.</li><li>Press <strong>Enter</strong>.</li><li>Check that the address is <strong>https://thonny.org/</strong>.</li></ol>
+<div class="look"><strong>You should now see:</strong> the Thonny website with download choices for Windows, macOS and Linux.</div></section>
+<section id="windows" class="card page-break"><h2>Windows 10 or 11</h2><h3>A. Download</h3><ol>
+<li>Find <strong>Official downloads for Windows</strong> on thonny.org.</li><li>Most ordinary PCs use Intel or AMD. Choose <strong>Intel or AMD computers</strong>.</li><li>Choose ARM64 only if you know the PC uses Windows on ARM/Snapdragon.</li><li>If asked, choose <strong>Save</strong> or <strong>Download</strong>.</li><li>Wait for the download to finish.</li></ol>
+<div class="check">✓ <strong>Check:</strong> You should now have a downloaded Thonny installer.</div>
+<h3>B. Install</h3><ol><li>Open the browser's Downloads list. In Edge, Chrome and Firefox, <kbd>Ctrl</kbd> + <kbd>J</kbd> usually opens it.</li><li>Find and open the Thonny file.</li><li>If Windows shows a security prompt, check that this is the file you downloaded from thonny.org.</li><li>Keep the standard choices unless you have a reason to change them.</li><li>Continue through the installer and wait until it finishes.</li></ol>
+<h3>C. Start</h3><ol><li>Open <strong>Start</strong>.</li><li>Type <strong>Thonny</strong>.</li><li>Open Thonny from the search results.</li></ol>
+<div class="look"><strong>You should now see:</strong> Thonny with an editor at the top and a <strong>Shell</strong> area below.</div></section>
+<section id="mac" class="card page-break"><h2>macOS</h2><h3>A. Identify your Mac</h3><ol><li>Open the Apple menu <strong></strong>.</li><li>Choose <strong>About This Mac</strong>.</li><li>If it shows an Apple M-series chip, choose <strong>Apple Silicon</strong> on thonny.org.</li><li>If it shows Intel, choose <strong>Intel Macs</strong>.</li></ol>
+<h3>B. Download and install</h3><ol><li>Find <strong>Official downloads for macOS</strong>.</li><li>Choose the version for your Mac.</li><li>Wait for the <code>.pkg</code> file to download.</li><li>Open <strong>Downloads</strong> and double-click it.</li><li>Follow the installer. Approve with your password or Touch ID if macOS asks.</li><li>Open <strong>Applications</strong> and start <strong>Thonny</strong>.</li></ol><div class="check">✓ <strong>Check:</strong> The Thonny window should be open.</div></section>
+<section id="linux" class="card page-break"><h2>Linux</h2><p>On Linux, Thonny normally uses Python 3 already installed on the system.</p><ol><li>Open a <strong>Terminal</strong>.</li><li>Copy the whole line below:</li></ol>
+<pre><code>wget -qO- https://thonny.org/installer-for-linux | bash</code></pre>
+<ol start="3"><li>Paste it into the terminal.</li><li>Press <strong>Enter</strong>.</li><li>Read and follow the questions shown.</li><li>Wait for installation to finish.</li><li>Find <strong>Thonny</strong> in the application menu and start it.</li></ol><div class="check">✓ <strong>Check:</strong> The Thonny window should be open.</div></section>
+<section id="test" class="card page-break"><h2>Test that everything works</h2><ol><li>Click the large editor area at the top of Thonny.</li><li>Type exactly:</li></ol><pre><code>print("Hello!")</code></pre><ol start="3"><li>Press <kbd>F5</kbd>, or click the green <strong>Run</strong> button.</li><li>If asked to save, choose Documents and name the file <code>hello.py</code>.</li><li>Look in the <strong>Shell</strong> area below.</li></ol><div class="success"><strong>You should see:</strong><pre><code>Hello!</code></pre><strong>If you see “Hello!”, you are done.</strong> Thonny and Python work.</div></section>
+<section id="help" class="card page-break"><h2>I'm stuck</h2><p>Choose the sentence that best matches what you see. You do not need to understand an error message first.</p>
+<h3>“I can't find the downloaded file”</h3><p>Open your browser's Downloads list and look for a file with <strong>thonny</strong> in its name.</p>
+<h3>“Thonny is installed, but I can't find it”</h3><p>Restart the computer, then search for Thonny in Start, Applications, or your Linux application menu.</p>
+<h3>“F5 does not show Hello!”</h3><p>Compare <code>print("Hello!")</code> character by character with the example above. Make sure you typed it in the editor, not directly in Shell.</p>
+<div class="stop"><strong>Security stop:</strong> Do not disable security features just to get past an installation warning. If you are unsure, stop and verify that the installer came from thonny.org.</div></section>
+<section class="card compact"><h2>About this guide</h2><p>Created and maintained by <strong>Ousdal IT</strong>. HTML is the primary format; PDF is built from the same page.</p><p><a href="../">Norsk hovedversjon</a></p></section>
+</main><footer><div class="wrap">Ousdal IT · Thonny Install · M0.8</div></footer>
+</body></html>
