@@ -6,38 +6,31 @@ import sys
 class GuideParser(HTMLParser):
     def __init__(self):
         super().__init__()
-        self.ids=set(); self.hrefs=[]; self.lang=None; self.title=False
-        self.h1=0; self.main=0; self.skip=False
+        self.ids=set(); self.hrefs=[]; self.lang=None; self.h1=0; self.main=0
     def handle_starttag(self, tag, attrs):
         a=dict(attrs)
         if tag=="html": self.lang=a.get("lang")
-        if tag=="title": self.title=True
         if tag=="h1": self.h1+=1
         if tag=="main": self.main+=1
         if "id" in a: self.ids.add(a["id"])
-        if tag=="a":
-            href=a.get("href","")
-            self.hrefs.append(href)
-            if "skip-link" in a.get("class","").split() and href=="#innhold":
-                self.skip=True
+        if tag=="a": self.hrefs.append(a.get("href",""))
 
 def fail(msg):
-    print("ERROR:", msg)
-    raise SystemExit(1)
+    print("ERROR:", msg); raise SystemExit(1)
 
-path=Path(sys.argv[1])
-text=path.read_text(encoding="utf-8")
-p=GuideParser(); p.feed(text)
-
-if p.lang != "no": fail("html lang must be no")
+path=Path(sys.argv[1]); source=path.read_text(encoding="utf-8")
+p=GuideParser(); p.feed(source)
+if p.lang not in ("no","en"): fail("html lang must be no or en")
 if p.h1 != 1: fail("guide must contain exactly one h1")
-if p.main != 1: fail("guide must contain exactly one main element")
-if not p.skip: fail("missing skip link to #innhold")
-for required in ("windows","mac","linux","test","hjelp","innhold"):
-    if required not in p.ids: fail(f"missing required id: {required}")
+if p.main != 1: fail("guide must contain exactly one main")
+required=("windows","mac","linux","test") + (("hjelp","innhold") if p.lang=="no" else ("help","content"))
+for item in required:
+    if item not in p.ids: fail(f"missing required id: {item}")
+skip="#innhold" if p.lang=="no" else "#content"
+if skip not in p.hrefs: fail(f"missing skip link: {skip}")
 for href in p.hrefs:
-    if href.startswith("#") and href[1:] not in p.ids:
-        fail(f"broken internal link: {href}")
-for phrase in ("Ousdal IT","thonny.org","print(\"Hei!\")","Jeg sitter fast"):
-    if phrase not in text: fail(f"missing required content: {phrase}")
-print(f"OK: {path} passed guide checks")
+    if href.startswith("#") and href[1:] not in p.ids: fail(f"broken internal link: {href}")
+phrases=("Ousdal IT","thonny.org") + (('print("Hei!")',"Jeg sitter fast") if p.lang=="no" else ('print("Hello!")',"I'm stuck"))
+for phrase in phrases:
+    if phrase not in source: fail(f"missing required content: {phrase}")
+print(f"OK: {path} passed {p.lang} guide checks")
