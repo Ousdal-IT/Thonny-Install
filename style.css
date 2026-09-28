@@ -72,3 +72,15 @@ main:focus { outline: none; }
 
 .stop { margin: 1.2rem 0; padding: 1rem 1.2rem; border: 3px solid #111827; border-radius: .55rem; background: #fff; font-size: 1.08rem; }
 @media print { .stop { break-inside: avoid; } }
+
+/* M0.7: print/PDF pagination */
+@media print {
+  h1, h2, h3 { break-after: avoid-page; page-break-after: avoid; }
+  pre, .important, .note, .success, .check, .look, .stop {
+    break-inside: avoid-page;
+    page-break-inside: avoid;
+  }
+  li { break-inside: avoid-page; page-break-inside: avoid; }
+  h3 + ol, h3 + p { break-before: avoid-page; page-break-before: avoid; }
+  .card { orphans: 3; widows: 3; }
+}
