@@ -36,6 +36,7 @@ jobs:
           python3 scripts/check-guide.py en/index.html
           python3 scripts/check-language-parity.py index.html en/index.html
           python3 scripts/check-screenshots.py assets/screenshots/manifest.json
+          python3 scripts/check-screenshot-anchors.py
 
       - name: Build Norwegian PDF
         run: |
